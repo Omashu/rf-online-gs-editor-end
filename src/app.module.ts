@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { DateTimeScalar } from './graphql/scalars/DateTime.scalar';
 
 import { RolesModule } from './api/roles/roles.module';
+import { UsersModule } from './api/users/users.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { RolesModule } from './api/roles/roles.module';
     }),
     TypeOrmModule.forRoot(),
     RolesModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService, DateTimeScalar],

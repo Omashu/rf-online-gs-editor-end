@@ -1,0 +1,30 @@
+scalar JSON
+scalar DateTime
+
+type Query {
+  users(sort: JSON, take: Int, skip: Int, where: JSON): Users
+  user(id: String!): User
+}
+
+type Mutation {
+  userLogin(ident: String!, password: String!): User
+  userRegister(login: String!, password: String!, email: String!): UserRegister
+}
+
+type UserRegister {
+  token: String!
+  user: User
+}
+
+type Users {
+  items: [User]
+  total: Int
+}
+
+type User {
+  id: String
+  login: String
+  email: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
