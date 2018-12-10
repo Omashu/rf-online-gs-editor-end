@@ -1,0 +1,25 @@
+scalar JSON
+scalar DateTime
+
+type Query {
+  roles(sort: JSON, take: Int, skip: Int, where: JSON): Roles
+  role(id: String!): Role
+}
+
+type Mutation {
+  roleCreate(title: String!, name: String, isDefault: Boolean): Role
+}
+
+type Roles {
+  items: [Role]
+  total: Int
+}
+
+type Role {
+  id: String
+  title: String
+  name: String
+  isDefault: Boolean
+  createdAt: DateTime
+  updatedAt: DateTime
+}
