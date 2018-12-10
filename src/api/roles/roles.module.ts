@@ -7,5 +7,6 @@ import { Role } from './role.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Role])],
   providers: [RolesService, RolesResolvers],
+  exports: [RolesService],
 })
 export class RolesModule {}
